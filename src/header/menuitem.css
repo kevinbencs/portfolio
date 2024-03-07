@@ -1,0 +1,108 @@
+:root{
+    --menu-backgroud-color: rgb(55, 55, 55);
+    --hamburger-menu-color: rgb(143, 143, 143);
+    --menu-item-color: rgb(150, 150, 150);
+    --menu-item-hover-color: rgb(210, 210, 210);
+    --menu-item-hover-shadow-color: black;
+    --menu-item-active-color: rgb(230, 230, 230);
+    --menu-item-active-shadow-color: rgb(37,37,37);
+    --menu-item-after-before-color: rgb(46, 46, 46);
+}
+
+.menu-list {
+    position: fixed;
+    transition-duration: 0.5s;
+    height: 100vh;
+    z-index: 50;
+    top : -100vh;
+    background-color: var(--menu-backgroud-color);
+    width: 100vw;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu-list-visible {
+    top: 0;
+}
+  
+  
+.menu-item{
+    position: relative;
+    transition-duration: 1s;
+    top: -100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 20vh;
+    max-width: 600px;
+    width: 90%;
+    overflow: hidden;
+}
+  
+  
+.menu-item-portfolio{
+    transition-delay: 0.2s;
+}
+
+.menu-item-about{
+    transition-delay: 0.4s;
+}
+
+.menu-item-visible{
+    top: 0;
+}
+  
+.menu-item span{
+    display: block;
+    width: 100%;
+    font-size: 3vw;
+    color: var(--menu-item-color);
+}
+  
+.menu-item:hover span{
+    color: var(--menu-item-hover-color);
+    text-shadow: 0 0 10px var(--menu-item-hover-shadow-color);
+}
+  
+.menu-list .active span {
+    color: var(--menu-item-active-color);
+    text-shadow: 0 0 10px var(--menu-item-active-shadow-color);
+}
+  
+.menu-item::after{
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: var(--menu-item-after-before-color);
+    height: 15vh;
+    align-self: flex-end;
+    width: 100%;
+    transition-duration: 0.8s;
+    z-index: -2;
+    transform: translate3d(100%,0,0);
+}
+  
+.menu-item::before{
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: var(--menu-item-after-before-color);
+    height: 15vh;
+    align-self: flex-start;
+    width: 100%;
+    transition-duration: 0.8s;
+    z-index: -1;
+    transform: translate3d(-100%,0,0);
+}
+  
+.menu-item:hover::after{
+    transform: translate3d(0,0,0);
+}
+  
+.menu-item:hover::before{
+    transform: translate3d(0,0,0);
+}

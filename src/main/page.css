@@ -1,0 +1,924 @@
+:root {
+  --text-color: whitesmoke;
+  --background: rgb(40,40,40);
+  --arrow-color: rgb(150,150,150);
+  --arrow-after-text-color: rgb(170,170,170);
+  --github: gray;
+  --linkedin: #2867b2;
+  --submit-button: rgb(150,150,150);
+  --submit-button-hover: rgb(170,170,170);
+  --github-button-hover: rgba(100, 100, 100, 0.5);
+  --linkdedin-button-hover: rgba(7, 22, 109, 0.5);
+}
+
+
+/*************************************************************************************************************
+home page
+**************************************************************************************************************/
+
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 99vh;
+    transition-duration: 0.5s;
+    opacity: 0;
+}
+
+.about h2{
+    color: var(--text-color);
+}
+
+.about section {
+    color: var(--text-color);
+}
+
+
+.portrait{
+    width: 10vw;
+    margin: 10px;
+    clip-path: circle(40%);
+}
+
+.about-visible{
+    animation-name: about-visible;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes about-visible{
+    from{
+        opacity: 0;
+        width: 90vw;
+    }
+    to{
+        opacity: 1;
+        width: 100vw;
+    }
+}
+
+.about-hidden{
+    animation-name: about-hidden;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes about-hidden{
+    from{
+        opacity: 1;
+        width: 100vw;
+    }
+    to{
+        opacity: 0;
+        width: 90vw;
+    }
+}
+
+
+
+/****************************************************************************************************************
+contact page
+*****************************************************************************************************************/
+
+
+.contact-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contact {
+    max-width: 600px;
+    text-align: start;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size: 3vw;
+}
+
+.contact p{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: var(--arrow-after-text-color);
+    width: 40vw;
+}
+
+.contact .github-linkedin-button-heading{
+    margin-top: 60px;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.form input, form textarea {
+    width: 40vw;
+    background: none;
+    margin: 20px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom-width: 2px;
+    border-color: var(--arrow-color);
+    min-height: 40px;
+    font-size: 15px;
+    color: var(--text-color);
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+.form textarea{
+    resize: none;
+    overflow: hidden;
+}
+
+.form .submit-button {
+    border: none;
+    background-color: var(--submit-button);
+    width: 20vw;
+    font-size: 15px;
+    border-radius: 3px;
+    min-width: 180px;
+    max-width: 300px;
+    min-width: 220px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.form .submit-button:hover{
+    background-color: var(--submit-button-hover);
+}
+
+.form .submit-button:active{
+    position: relative;
+    top: 2px;
+}
+
+.github-linkedin-button-container{
+    display: flex;
+}
+
+.github-linkedin-button-container .github-button{
+    margin-right: 10px;
+    margin-left: 20px;
+    color: var(--text-color);
+    background-color: var(--github);
+    max-width: 200px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.github-linkedin-button-container .github-button::after{
+    background-color: var(--github-button-hover);
+    z-index: 10;
+    position: absolute;
+    border-radius: 3px;
+    content: "";
+    width: 120px;
+    height: 40px;
+    transition-duration: 0.8s;
+    transform: translate3d(-100%,0,0);
+}
+
+.github-linkedin-button-container .github-button:hover::after{
+    transform: translate3d(0,0,0);
+}
+
+.github-button-img{
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+.github-linkedin-button-container .github-button-text{
+    padding-right: 20px;
+}
+
+
+.github-linkedin-button-container .linkedin-button{
+    color: var(--text-color);
+    background-color: var(--linkedin);
+    border-radius: 3px;
+    max-width: 300px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.github-linkedin-button-container .linkedin-button::after{
+    background-color: var(--linkdedin-button-hover);
+    z-index: 10;
+    position: absolute;
+    border-radius: 3px;
+    content: "";
+    width: 150px;
+    height: 40px;
+    transition-duration: 0.8s;
+    transform: translate3d(-100%,0,0);
+}
+
+.github-linkedin-button-container .linkedin-button:hover::after{
+    transform: translate3d(0,0,0);
+}
+
+.linkedin-button-img{
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+.github-linkedin-button-container .linkedin-button-text{
+    padding-right: 20px;
+}
+
+
+
+
+/**********************************************************************************************************************
+portfolio page
+**********************************************************************************************************************/
+
+.portfolio {
+    padding-top: 80px;
+}
+
+.portfolio h2{
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/**********************************************************************************************************************
+right arrow
+***********************************************************************************************************************/
+
+
+
+
+
+nav .directionRight{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    position: fixed;
+    left: calc(95% - 40px);
+    top: 50vh;
+    z-index: 20;
+}
+
+nav .directionRight span{
+    width: 100%;
+    background-color: var(--arrow-color);
+    height: 3px;
+    display: block;
+}
+
+nav .directionRight span::before{
+    content: "";
+    width: 100%;
+    background-color: var(--arrow-color);
+    height: 3px;
+    display: block;
+    position: relative;
+}
+
+nav .directionRight:hover span{
+    rotate: 50deg;
+}
+
+nav .directionRight:hover span::before{
+    rotate: 80deg;
+    top: 29px;
+    left: 33px;
+}
+
+
+nav .directionRight::after{
+    content: "";
+    position: relative;
+    color: var(--arrow-after-text-color);
+    top: 8px;
+    left: -5vw;
+    font-size: 1.5vw;
+    text-shadow: 0 0 1vw whitesmoke;
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+
+nav .directionRightHome::after{
+    content: "Portfolio";
+}
+
+nav .directionRightPortfolio::after{
+    content: "Contact";
+}
+
+nav .directionRight:hover::after {
+    left: -8vw;
+    opacity: 1;
+}
+
+nav .directionRightDisappearance span {
+    rotate: 0deg;
+    transition-duration: 0.2s;
+}
+
+nav .directionRightDisappearance:hover span {
+    rotate: 0deg;
+    transition-duration: 0.2s;
+}
+
+nav .directionRightDisappearance span::before {
+    rotate: 180deg;
+    transition-duration: 0.2s;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+nav .directionRightDisappearance:hover span::before {
+    rotate: 180deg;
+    transition-duration: 0.2s;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+nav .directionRightDisappearance {
+    transition-duration: 0.5s;
+    transition-delay: 0.3s;
+    left: 150vw;
+    visibility: hidden;
+}
+
+
+nav .directionRightAppearance span {
+    animation-name: directionRightAppearanceArrow;
+    animation-duration: 0.2s;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
+}
+
+nav .directionRightAppearance:hover span{
+    animation-fill-mode: none;
+}
+
+nav .directionRightAppearance span::before {
+    animation-name: directionRightAppearanceArrowBefore;
+    animation-duration: 0.2s;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
+}
+
+nav .directionRightAppearance:hover span::before {
+    animation-fill-mode: none;
+}
+
+nav .directionRightAppearance {
+    animation-duration: 0.5s;
+    animation-name: directionRightAppearance;
+}
+
+@keyframes directionRightAppearance{
+    from{
+        left: 150vw;
+        visibility: hidden;
+    }
+    to{
+        left: calc(95% - 40px);
+        visibility: visible;
+    }
+}
+
+@keyframes directionRightAppearanceArrow{
+    from{
+        rotate: 0deg;
+        visibility: hidden;
+    }
+    to{
+        rotate: 45deg;
+        visibility: visible;
+    }
+}
+
+@keyframes directionRightAppearanceArrowBefore{
+    from{
+        top: 0;
+        left: 0;
+        rotate: 180deg;
+        visibility: hidden;
+    }
+    to{
+        rotate: 90deg;
+        left: 30px;
+        top: 30px;
+        visibility: visible;
+    }
+}
+
+
+
+
+
+
+/***********************************************************************************************************************
+left arrow
+***********************************************************************************************************************/
+
+
+nav .directionLeft::after{
+    content: "";
+    position: relative;
+    color: var(--arrow-after-text-color);
+    top: 8px;
+    left: 20px;
+    font-size: 1.5vw;
+    text-shadow: 0 0 1vw whitesmoke;
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+
+nav .directionLeftContact::after{
+    content: "Portfolio";
+}
+
+nav .directionLeftPortfolio::after{
+    content: "Home";
+}
+
+nav .directionLeft:hover::after {
+    left: 100px;
+    opacity: 1;
+}
+
+
+
+nav .directionLeft{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    position: fixed;
+    top: 50vh;
+    left: calc(5% + 40px);
+    z-index: 20;
+}
+
+nav .directionLeft span{
+    width: 100%;
+    background-color: var(--arrow-color);
+    height: 3px;
+    display: block;
+}
+
+nav .directionLeft span::before{
+    content: "";
+    width: 100%;
+    background-color: var(--arrow-color);
+    height: 3px;
+    display: block;
+    position: relative;
+}
+
+
+nav .directionLeft:hover span{
+    rotate: -50deg;
+}
+
+nav .directionLeft:hover span::before{
+    rotate: -80deg;
+    top: 29px;
+    left: -33px;
+}
+
+nav .directionLeftDisappearance span {
+    rotate: 0deg;
+    transition-duration: 0.2s;
+}
+
+
+nav .directionLeftDisappearance:hover span {
+    rotate: 0deg;
+    transition-duration: 0.2s;
+}
+
+nav .directionLeftDisappearance span::before {
+    rotate: -180deg;
+    transition-duration: 0.2s;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+nav .directionLeftDisappearance:hover span::before {
+    rotate: -180deg;
+    transition-duration: 0.2s;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+nav .directionLeftDisappearance {
+    transition-duration: 0.5s;
+    transition-delay: 0.3s;
+    left: -50vw;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+nav .directionLeftAppearance span {
+    animation-name: directionLeftAppearanceArrow;
+    animation-duration: 0.2s;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
+}
+
+nav .directionLeftAppearance:hover span{
+    animation-fill-mode: none;
+}
+
+nav .directionLeftAppearance span::before {
+    animation-name: directionLeftAppearanceArrowBefore;
+    animation-duration: 0.2s;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
+}
+
+nav .directionLeftAppearance:hover span::before {
+    animation-fill-mode: none;
+}
+
+nav .directionLeftAppearance {
+    animation-duration: 0.5s;
+    animation-name: directionLeftAppearance;
+}
+
+@keyframes directionLeftAppearance{
+    from{
+        left: -50vw;
+        visibility: hidden;
+    }
+    to{
+        left: calc(5% + 40px);
+        visibility: visible;
+    }
+}
+
+@keyframes directionLeftAppearanceArrow{
+    from{
+        rotate: 0deg;
+        visibility: hidden;
+    }
+    to{
+        rotate: -45deg;
+        visibility: visible;
+    }
+}
+
+@keyframes directionLeftAppearanceArrowBefore{
+    from{
+        top: 0;
+        left: 0;
+        rotate: -180deg;
+        visibility: hidden;
+    }
+    to{
+        rotate: -90deg;
+        left: -30px;
+        top: 30px;
+        visibility: visible;
+    }
+}
+
+
+
+
+
+/****************************************************************************************************************
+github and linkedin link in home page
+*****************************************************************************************************************/
+
+
+
+.github{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.github-hidden{
+    visibility: hidden;
+}
+
+.linkedin{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+
+@-moz-document url-prefix(){
+    .linkedin{
+        clip-path: rect(1px 1px 29px 29px );
+        border-radius: 0;
+    }
+}
+
+.linkedin-hidden{
+    visibility: hidden;
+}
+
+.github-link{
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 0;
+    height: 50px;
+    background-color: var(--github);
+    top: 40vh;
+    transition-duration: 0.5s;
+    left: 0;
+}
+
+.github-link:hover{
+    width: 100px;
+    transition-duration: 0.5s;
+}
+
+
+
+
+.github-link-appearance{
+    width: 50px;
+    animation-name: github-link-appearance;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes github-link-appearance{
+    from{
+        visibility: hidden;
+        left: -50vw;
+    }
+    to{
+        visibility: visible;
+        left: 0;
+    }
+}
+
+.github-link-appearance:hover{
+    animation-fill-mode: none;
+}
+
+
+.github-link-hidden{
+    transition-duration: 0.3s;
+    width: 0;
+    left: -1vw;
+}
+
+
+.linkedin-link{
+    position: fixed;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 0;
+    height: 50px;
+    background-color: var(--linkedin);
+    text-align: center;
+    top: calc(40vh + 50px);
+    transition-duration: 0.7s;
+    
+}
+
+.linkedin-link:hover{
+    width: 100px;
+    transition-duration: 0.5s;
+}
+
+
+.linkedin-link-appearance{
+    animation-name: linkedin-link-appearance;
+    animation-fill-mode: forwards;
+    animation-duration: 0.9s;
+    width: 50px;
+}
+
+.linkedin-link-appearance:hover{
+    animation-fill-mode: none;
+}
+
+@keyframes linkedin-link-appearance{
+    from{
+        visibility: hidden;
+        left: -50vw;
+    }
+    to{
+        visibility: visible;
+        left: 0;
+    }
+}
+
+
+.linkedin-link-hidden{
+    width: 0;
+    transition-duration: 0.3s;
+    transition-delay: 0.1s;
+    left: -1vw;
+}
+
+
+/*****************************************************************************************************************
+media screen
+******************************************************************************************************************/
+
+@media screen and (max-width: 992px) {
+    nav .directionRight::after{
+        visibility: hidden;
+    }
+    nav .directionLeft::after{
+        visibility: hidden;
+    }
+
+    .contact h2 {
+        font-size: 5vw;
+    }
+
+    .portrait{
+        width: 20vw;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    nav .directionRight{
+        visibility: hidden;
+    }
+    nav .directionRightAppearance span {
+        animation: none;
+    }
+    nav .directionRightAppearance span::before {
+        animation: none;
+    }
+    nav .directionRightAppearance {
+        animation: none;
+    }
+
+    nav .directionLeft{
+        visibility: hidden;
+    }
+    nav .directionLeftAppearance span {
+        animation: none;
+    }
+    nav .directionLeftAppearance span::before {
+        animation: none;
+    }
+    nav .directionLeftAppearance {
+        animation: none;
+    }
+
+    .github{
+        margin: 0;
+        width: 50px;
+        height: 50px;
+    }
+
+    .github-link{
+        width: 70px;
+        height: 70px;
+        left: calc(50vw + 10px);
+        top: 120vh;
+        justify-content: center;
+        transition-duration: 0.7s;
+    }
+
+    .github-link:hover{
+        width: 70px;
+    }
+
+    .github-link-appearance{
+        animation-name: github-link-appearance;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    .github-link-appearance:hover{
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes github-link-appearance {
+        from{
+            top: 120vh;
+        }
+        to{
+            top: 80vh;
+        }
+    }
+
+    .github-link-hidden{
+        animation-name: github-link-hidden;
+        animation-duration: 0.7s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes github-link-hidden {
+        from{
+            top: 80vh;
+        }
+        to{
+            top: 120h;
+        }
+    }
+
+    .linkedin{
+        margin: 0;
+        width: 50px;
+        height: 50px;
+    }
+
+    @-moz-document url-prefix(){
+        .linkedin{
+            clip-path: rect(1px 1px 49px 49px );
+            border-radius: 0;
+        }
+    }
+
+    .linkedin-link{
+        width: 70px;
+        height: 70px;
+        left: calc(50vw - 80px);
+        top: 120vh;
+        justify-content: center;
+        transition-duration: 0.7s;
+    }
+
+    .linkedin-link:hover{
+        width: 70px;
+    }
+
+    .linkedin-link-appearance{
+        animation-name: linkedin-link-appearance;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    .linkedin-link-appearance:hover{
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes linkedin-link-appearance {
+        from{
+            top: 120vh;
+        }
+        to{
+            top: 80vh;
+        }
+    }
+
+    .linkedin-link-hidden{
+        animation-name: github-link-hidden;
+        animation-duration: 0.7s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes linkedin-link-hidden {
+        from{
+            top: 80vh;
+        }
+        to{
+            top: 120h;
+        }
+    }
+
+}

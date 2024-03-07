@@ -1,0 +1,101 @@
+.scene{
+  perspective: 100vw;
+  width: 100vw;
+  height: 100vh;
+}
+
+.App-page{
+  transform: translateZ(-50vw);
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(.65,.05,.105,.95);
+}
+
+.main{
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+
+.current{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  color: whitesmoke;
+  background-color: rgb(40, 40, 40);
+  text-align: center;
+  font-weight: bold;
+}
+
+.scene-move{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 10;
+}
+
+
+.scene-move-right{
+  left: 100vw;
+}
+
+
+.scene-move-left{
+  left: -100vw;
+}
+
+.main-move{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+}
+
+.loader{
+  color: whitesmoke;
+  background-color: rgb(40, 40, 40);
+  text-align: center;
+  font-weight: bold;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+
+
+.rotate-page{
+  animation: rotate-page 0.8s  both cubic-bezier(.65,.05,.105,.95);
+  transform-style: preserve-3d;
+}
+
+
+@keyframes rotate-page {
+  to {
+    opacity:1;
+    -webkit-transform: rotateY(-90deg) translateZ(35vw);
+    transform: rotateY(-90deg) translateZ(46vw);
+  }
+}
+
+.moveleft{
+  left: 0;
+  transition-duration: 0.85s;
+  transition-timing-function: cubic-bezier(.65,.90,.125,.90);
+}
+
+.rotate-page-right{
+  animation: rotate-page-right 0.8s  both cubic-bezier(.65,.05,.105,.95);
+  transform-style: preserve-3d;
+}
+
+
+@keyframes rotate-page-right {
+  to {
+    opacity:1;
+    -webkit-transform: rotateY(90deg) translateZ(35vw);
+    transform: rotateY(90deg) translateZ(46vw);
+  }
+}
+
