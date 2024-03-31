@@ -1,78 +1,96 @@
-import React from 'react';
+import {useState, useRef} from 'react';
 import Menu from './menu';
 import './hamburgermenu.css';
 
 export default function Header(props) {
+  const hamburgerMenu = useRef(null);
 
-  const [menuListClass, setMenuListClass] = React.useState('menu-list')
-  const [menuItemAboutClass, setMenuItemAboutClass] = React.useState()
-  const [menuItemPortfolioClass, setMenuItemPortfolioClass] = React.useState()
-  const [menuItemContactClass, setMenuItemContactClass] = React.useState()
+  const [menuListClass, setMenuListClass] = useState();
+  const [menuItemAboutClass, setMenuItemAboutClass] = useState();
+  const [menuItemPortfolioClass, setMenuItemPortfolioClass] = useState();
+  const [menuItemContactClass, setMenuItemContactClass] = useState();
+
+  const [isMenuItemActive, setMenuItemActive] = useState(false);
 
   const menuItemHidden = () => {
-    setMenuListClass('menu-list');
-    setMenuItemAboutClass('menu-item menu-item-about');
-    setMenuItemPortfolioClass('menu-item menu-item-portfolio');
-    setMenuItemContactClass('menu-item menu-item-contact');
+    setMenuListClass();
+    setMenuItemAboutClass('menu-item-about');
+    setMenuItemPortfolioClass('menu-item-portfolio');
+    setMenuItemContactClass('menu-item-contact');
+    
+    setTimeout(() => {
+      setMenuItemActive(false);
+    },1000);
+    
   };
 
   const menuItemShow = () => {
-    setMenuListClass('menu-list menu-list-visible');
-    setMenuItemAboutClass('menu-item menu-item-about menu-item-visible');
-    setMenuItemPortfolioClass('menu-item menu-item-portfolio menu-item-visible');
-    setMenuItemContactClass('menu-item menu-item-contact menu-item-visible');
+
+    setMenuItemActive(true);
+    setTimeout(() => {
+      setMenuListClass('menu-list-visible');
+      setMenuItemAboutClass('menu-item-about menu-item-visible');
+      setMenuItemPortfolioClass('menu-item-portfolio menu-item-visible');
+      setMenuItemContactClass('menu-item-contact menu-item-visible');
+    },10);
+    
   };
 
 
   const hamburgerMenuInactive = () => {
-    props.setHamburgerMenu('hamburger-menu hamburger-menu-appearance hamburger-menu-rot');
-    document.querySelector(".hamburger-menu").style.transform = `rotate(180deg)`;
+    props.menu.setHamburgerMenu('hamburger-menu-rot');
 
-    let id = setInterval(() => {
-      document.querySelector('.hamburger-menu').style.transform = `rotate(0deg)`;
-      props.setHamburgerMenu('hamburger-menu hamburger-menu-appearance hamburger-menu-hov');
-      clearInterval(id);
+    setTimeout(() => {
+      props.menu.setHamburgerMenu('hamburger-menu-hov');
     },600);
   }
 
 
   const hamburgerMenuActive = () => {
-    document.querySelector('.hamburger-menu').style.transform = `rotate(180deg)`;
-    props.setHamburgerMenu('hamburger-menu hamburger-menu-appearance hamburger-menu-rot');
+    props.menu.setHamburgerMenu('hamburger-menu-rot');
     
-    let id = setInterval(() => {
-      document.querySelector(".hamburger-menu").style.transform = `rotate(45deg)`;
-      props.setHamburgerMenu('hamburger-menu hamburger-menu-appearance hamburger-menu-rot hamburger-menu-rot-two');
-      clearInterval(id);
+    setTimeout(() => {
+      props.menu.setHamburgerMenu('hamburger-menu-rot hamburger-menu-rot-two');
     },400);
-
-    let id2= setInterval(() => {
-      document.querySelector(".hamburger-menu").style.transform = `rotate(60deg)`;
-      clearInterval(id2);
-    },800);
   };
 
 
 
   const menuAnimanition = () => {
-    if (props.isMenuActive === true){
+    if (props.menu.isMenuActive === true){
       hamburgerMenuInactive();
       menuItemHidden();
-      props.setMenuActive(() => false);
+      props.menu.setMenuActive(() => false);
     }
     else {
       hamburgerMenuActive();
       menuItemShow();
-      props.setMenuActive(() => true);
+      props.menu.setMenuActive(() => true);
     }
+    hamburgerMenu.current.blur();
+  };
+
+  const menuKeyboard = (e) => {
+    if (e.keyCode === 13){
+      menuAnimanition();
+    }
+  };
+
+  const menuClassList = {
+    menuItemHidden, 
+    hamburgerMenuInactive,
+    menuListClass,
+    menuItemAboutClass,
+    menuItemContactClass,
+    menuItemPortfolioClass
   };
 
   return (
     <header>
-        <label className='hamburger-menu-label' onClick={menuAnimanition}>
-          <span className= {props.hamburgerMenu} ></span>
-        </label>
-        <Menu  menuItemHidden = {menuItemHidden} hamburgerMenuInactive = {hamburgerMenuInactive} menuListClass = {menuListClass} menuItemAboutClass = {menuItemAboutClass} menuItemContactClass = {menuItemContactClass} menuItemPortfolioClass = {menuItemPortfolioClass}/>
+      <label className='hamburger-menu-label' onClick={menuAnimanition} tabIndex="0" ref={hamburgerMenu} onKeyDown={menuKeyboard}>
+        <span className= {`${props.menu.hamburgerMenu}  hamburger-menu`} ></span>
+      </label>
+      {isMenuItemActive && <Menu  {...menuClassList}/>}
     </header>
   )
 }

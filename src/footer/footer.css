@@ -12,6 +12,21 @@ footer{
 
 .footer-hidden{
     bottom: -20px;
+}
+
+@media screen and (max-width: 768px){
+    footer{
+        position: static;
+        background-color: var(--background-main);
+        padding-bottom: 20px;
+    }
+
+    .footer-hidden{
+        transition-duration: 200ms;
+        bottom: -100vh;
+        position: relative;
+
+    }
     
 }
 

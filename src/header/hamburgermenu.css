@@ -1,152 +1,180 @@
-:root{
-    --menu-backgroud-color: rgb(55, 55, 55);
-    --hamburger-menu-color: rgb(143, 143, 143);
-    --menu-item-color: rgb(150, 150, 150);
-    --menu-item-hover-color: rgb(210, 210, 210);
-    --menu-item-hover-shadow-color: black;
-    --menu-item-active-color: rgb(230, 230, 230);
-    --menu-item-active-shadow-color: rgb(37,37,37);
-    --menu-item-after-before-color: rgb(46, 46, 46);
-  }
   
-  
-  
-  .hamburger-menu-label{
-    display: block;
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    left: calc(95% - 40px);
-    top: 50px;
-    z-index: 100;
-    cursor: pointer;
-    
-  }
-  
-  .hamburger-menu {
-    top: 7.5px;
-  }
-  
-  .hamburger-menu, .hamburger-menu::after, .hamburger-menu::before{
-    display: block;
-    width: 100%;
-    height: 4px;
-    background-color: var(--hamburger-menu-color);
-    position: relative;
-    transition-duration: 0.3s;
-    top: -10px;
-  }
-  
-  .hamburger-menu::before{
-    content: "";
-    top: 10px;
-  }
-  
-  .hamburger-menu::after{
-    content: "";
-    top: 15px;
-  }
-
-  .hamburger-menu-label:hover .hamburger-menu-hov{
-    top: -15px;
-  }
-  
-  .hamburger-menu-label:hover .hamburger-menu-hov::before{
-    top: 15px;
-  }
-  
-  .hamburger-menu-label:hover .hamburger-menu-hov::after{
-    top: 25px;
-  }
-
-  .hamburger-menu-appearance {
-    animation-name: hamburger-menu-appearance;
-    animation-duration: 0.6s;
-  }
-
-  .hamburger-menu-appearance::after {
-    animation-name: hamburger-menu-appearance;
-    animation-duration: 0.6s;
-    animation-delay: 0.2s;
-  }
-  
-  .hamburger-menu-appearance::before {
-    animation-name: hamburger-menu-appearance;
-    animation-duration: 0.6s;
-    animation-delay: 0.1s;
-  }
+.hamburger-menu-label{
+  display: block;
+  width: 54px;
+  height: 66px;
+  position: fixed;
+  left: calc(95% - 40px);
+  top: 50px;
+  cursor: pointer;
+  z-index: 100;
+}
 
 
-  @keyframes hamburger-menu-appearance {
-    from{
-      left: 20vw;
-    }
-    to{
-      left: 0;
-    }
-  }
+
+.hamburger-menu {
+  top: 20px;
+  width: 75%;
+  left: 7px;
+}
+
+.hamburger-menu, .hamburger-menu::after, .hamburger-menu::before{
+  display: block;
+  height: 4px;
+  background-color: var(--hamburger-menu-color);
+  position: relative;
+  transition-duration: 0.3s;
+}
+
+.hamburger-menu::before{
+  content: "";
+  top: 10px;
+}
+
+.hamburger-menu::after{
+  content: "";
+  top: 15px;
+}
+
+.hamburger-menu-label:hover .hamburger-menu-hov{
+  top: 15px;
+}
+
+.hamburger-menu-label:hover .hamburger-menu-hov::before{
+  top: 15px;
+}
+
+.hamburger-menu-label:hover .hamburger-menu-hov::after{
+  top: 25px;
+}
+
+.hamburger-menu-label:focus .hamburger-menu-hov{
+  top: 15px;
+}
+
+.hamburger-menu-label:focus .hamburger-menu-hov::before{
+  top: 15px;
+}
+
+.hamburger-menu-label:focus .hamburger-menu-hov::after{
+  top: 25px;
+}
 
 
-  .hamburger-menu-disappearance {
-    /*animation: hamburger-menu-disappearance forwards 1s;*/
-    animation-name: hamburger-menu-disappearance;
-    animation-fill-mode:forwards;
-    animation-duration: 0.6s;
-    animation-delay: 0.2s;
-    
-  }
+.hamburger-menu-appearance {
+  animation-name: hamburger-menu-appearance;
+  animation-duration: 0.6s;
+}
 
-  .hamburger-menu-disappearance::after {
-    /*animation: hamburger-menu-disappearance 1s;*/
-    animation-name: hamburger-menu-disappearance;
-    animation-duration: 0.6s;
+.hamburger-menu-appearance::after {
+  animation-name: hamburger-menu-appearance;
+  animation-duration: 0.6s;
+  animation-delay: 0.2s;
+}
+
+.hamburger-menu-appearance::before {
+  animation-name: hamburger-menu-appearance;
+  animation-duration: 0.6s;
+  animation-delay: 0.1s;
+}
+
+
+@keyframes hamburger-menu-appearance {
+  from{
+    left: 20vw;
   }
+  to{
+    left: 0;
+  }
+}
+
+
+.hamburger-menu-disappearance {
+  animation-name: hamburger-menu-disappearance;
+  animation-fill-mode:forwards;
+  animation-duration: 0.6s;
+  animation-delay: 0.2s;
   
-  .hamburger-menu-disappearance::before {
-    /*animation: hamburger-menu-disappearance 1s;*/
-    animation-name: hamburger-menu-disappearance;
-    animation-duration: 0.6s;
-    animation-delay: 0.1s;
-  }
+}
+
+.hamburger-menu-disappearance::after {
+  animation-name: hamburger-menu-disappearance;
+  animation-duration: 0.6s;
+}
+
+.hamburger-menu-disappearance::before {
+  animation-name: hamburger-menu-disappearance;
+  animation-duration: 0.6s;
+  animation-delay: 0.1s;
+}
 
 
-  @keyframes hamburger-menu-disappearance {
-    from{
-      left: 0;
-    }
-    to{
-      left: 20vw;
-    }
+@keyframes hamburger-menu-disappearance {
+  from{
+    left: 0;
   }
+  to{
+    left: 20vw;
+  }
+}
 
-  
-  .hamburger-menu-rot{
-    top: 0;
-  }
 
-  .hamburger-menu-rot::before{
-    top: 0;
-  }
-  
-  .hamburger-menu-rot::after{
-    top: -5px;
-  }
-  
-  .hamburger-menu-rot-two{
-    width: 60px;
-  }
+.hamburger-menu-rot{
+  rotate: 180deg;
+}
 
-  .hamburger-menu-rot-two::after{
+.hamburger-menu-rot::before{
+  top: 0;
+}
+
+.hamburger-menu-rot::after{
+  top: -5px;
+}
+
+.hamburger-menu-rot-two{
+  width: 60px;
+  top: 30px;
+  left: -2px;
+  rotate: 60deg;
+  animation-name: hamburger-label-rotate;
+  animation-duration: 800ms;
+}
+
+
+
+.hamburger-menu-rot-two::after{
+  rotate: 60deg;
+}
+
+.hamburger-menu-label:hover .hamburger-menu-rot-two{
+  rotate: 70deg;
+}
+.hamburger-menu-label:hover .hamburger-menu-rot-two::after{
+  rotate: 40deg;
+}
+
+.hamburger-menu-label:focus .hamburger-menu-rot-two{
+  rotate: 70deg;
+}
+.hamburger-menu-label:focus .hamburger-menu-rot-two::after{
+  rotate: 40deg;
+}
+
+@keyframes hamburger-label-rotate{
+  0%{
+    rotate: 180deg;
+  }
+  50%{
+    rotate: 45deg;
+  }
+  100%{
     rotate: 60deg;
   }
-  
-  .hamburger-menu-label:hover .hamburger-menu-rot-two{
-    rotate: 10deg;
+}
+
+@media screen and (max-width: 768px){
+  .hamburger-menu-label{
+    top: 10px;
   }
-  .hamburger-menu-label:hover .hamburger-menu-rot-two::after{
-    rotate: 40deg;
-  }
-
-
-
+}
   

@@ -1,282 +1,181 @@
-import React from 'react';
-import {Routes, Route, useLocation} from 'react-router-dom';
-import Home from '../main/home';
-import Portfolio from '../main/portfolio';
-import Contact from '../main/contact';
+import {useState, useEffect, useCallback} from 'react';
+import {useLocation} from 'react-router-dom';
 import "./content.css";
 import Header from '../header/header';
-import Footer from '../footer/footer'
+import Footer from '../footer/footer';
+import Main from '../main/main';
+import ClickRightArrow from './clickrightarrow';
+import ClickLeftArrow from './clickleftarrow';
+import Home from '../pages/home';
+import Portfolio from '../pages/portfolio';
+import Contact from '../pages/contact';
+import NotFound from '../pages/notfound';
 
 
 
 export default function Content() {
-  const [isMenuActive, setMenuActive] = React.useState(false);
+
   const location = useLocation();
-  const [displayLocation, setDisplayLocation] = React.useState(location);
-  const [page, setPage] = React.useState('');
-  const [hamburgerMenu, setHamburgerMenu] = React.useState('hamburger-menu hamburger-menu-hov hamburger-menu-appearance');
-  const [arrowRight, setArrowRight] = React.useState( location.pathname === '/' ? 'directionRight directionRightHome directionRightAppearance directionArrow' : 'directionRight directionRightPortfolio directionRightAppearance');
-  const [arrowLeft, setArrowLeft] = React.useState( location.pathname === '/portfolio' ? 'directionLeft directionLeftPortfolio directionLeftAppearance directionArrow' : 'directionLeft directionLeftContact directionLeftAppearance');
-  /*const [sceneClass, setSceneClass] = React.useState('scene-move-right scene-move');
-  const [currentClass, setCurrentClass] = React.useState('current');
-  const [mainClass, setMainClass] = React.useState('main');*/
-  const [githubLink, setGithubLink] = React.useState('github-link github-link-appearance');
-  const [github, setGithub] = React.useState('github');
-  const [linkedinLink, setLinkedinLink] = React.useState('linkedin-link linkedin-link-appearance');
-  const [linkedin, setLinkedin] = React.useState('linkedin');
-  const [footerClass, setFooterClass] = React.useState('footer-visibility');
-  const [aboutClass, setAboutClass] = React.useState('about about-visible');
+  const [isMenuActive, setMenuActive] = useState(false);
+  const [hamburgerMenu, setHamburgerMenu] = useState('hamburger-menu-hov hamburger-menu-appearance');
+
+  const [displayLocation, setDisplayLocation] = useState(location);
+  const [page, setPage] = useState('');
+  
+  const [arrowRight, setArrowRight] = useState( 
+    location.pathname === '/' ? 'directionRight directionRightHome directionRightAppearance ' : 
+    'directionRight directionRightPortfolio directionRightAppearance');
+  const [arrowLeft, setArrowLeft] = useState(
+    location.pathname === '/portfolio' ? 'directionLeft directionLeftPortfolio directionLeftAppearance ' : 
+    'directionLeft directionLeftContact directionLeftAppearance'
+    );
+    
+  const [sceneClass, setSceneClass] = useState('');
+  const [currentClass, setCurrentClass] = useState('');
+  const [mainClass, setMainClass] = useState('');
+  
+
+  const [homeText, setHomeText] = useState({
+    'h1': 'Hello, az én nevem ',
+   'about': 'Egy full-stack webfejlesztő vagyok.'
+  });
+  const [portfolioText, setPortfolioText] = useState({
+    'h1': 'Webfejlesztő portfolió', 'section':
+   'Képességeim: HTML, CSS, Javascript, React, Node.JS'
+  });
+  const [contactText, setContactText] = useState({
+    'h1':'Kapcsolat', 
+    'h2': 'Egyéb elérhetőség', 
+    'p': 'Ha fel szeretnéd venni velem a kapcsolatot, töltsd ki az űrlapot vagy küldj egy email-t a kevinbencs8@gmail.com címre.',
+    'button': 'Beküld'
+  });
+
+
+  const [githubLink, setGithubLink] = useState('github-link github-link-appearance');
+  const [github, setGithub] = useState('github');
+  const [linkedinLink, setLinkedinLink] = useState('linkedin-link linkedin-link-appearance');
+  const [linkedin, setLinkedin] = useState('linkedin');
+  const [footerClass, setFooterClass] = useState('footer-visibility');
+  const [aboutClass, setAboutClass] = useState('about about-visible');
+  const [isPageChange, setPageChange] = useState(false);
 
   
-  React.useEffect(() => {
-    const clickRightArrow = () => {
-      /*setSceneClass('scene-move-right scene-move');*/
-      setAboutClass('about about-hidden');
-      setFooterClass('footer-hidden');
-      document.querySelector(".js-scene-move").classList.remove('scene-move-left');
-      document.querySelector(".js-scene-move").classList.add('scene-move-right');
-      setHamburgerMenu('hamburger-menu hamburger-menu-hov hamburger-menu-disappearance');
-      setArrowRight('directionRight  directionRightDisappearance directionArrow');
-      setArrowLeft('directionLeft  directionLeftDisappearance directionArrow');
-      setGithubLink('github-link github-link-hidden')
-      setLinkedinLink('linkedin-link linkedin-link-hidden')
-      
-      let id3 = setInterval(() => {
-        document.querySelector(".js-current").classList.add('rotate-page');
-        setGithub('github github-hidden');
-        setGithubLink('github-link')
-        setLinkedin('linkedin linkedin-hidden');
-        setLinkedinLink('linkedin-link')
-
-        /*setSceneClass('scene-move-right scene-move moveleft');
-        setCurrentClass('current rotate-page');*/
-        clearInterval(id3);
-        document.querySelector(".js-scene-move").classList.add('moveleft');
-        /*setMainClass('main App-page');*/
-        document.querySelector(".js-main").classList.add('App-page');
-        
-        let id2 = setInterval(() => {
-          setDisplayLocation(location);
-          clearInterval(id2);
-        },400);
-        
-        let id = setInterval(() => {
-          
-          setPage('');
-          setGithubLink('github-link github-link-appearance');
-          /*setGithub('github');
-          setLinkedinLink('linkedin-link linkedin-link-appearance');*/
-          setLinkedin('linkedin');
-          setAboutClass('about about-visible');
-          document.querySelector(".js-scene-move").classList.remove('moveleft');
-          /*setSceneClass('scene-move-right scene-move');*/
-          document.querySelector(".js-current").classList.remove('rotate-page');
-          /*setCurrentClass('current');
-          setMainClass('main');*/
-          document.querySelector(".js-main").classList.remove('App-page');
-          setHamburgerMenu('hamburger-menu hamburger-menu-hov hamburger-menu-appearance');
-          setFooterClass('');
-          setAboutClass('about about-visible');
-          if (location.pathname === '/'){
-            setArrowRight('directionRight directionRightHome directionRightAppearance');
-          }
-          else{
-            setArrowRight('directionRight directionRightPortfolio directionRightAppearance');
-          }
-          if (location.pathname === '/portfolio'){
-            setArrowLeft('directionLeft directionLeftPortfolio directionLeftAppearance');
-          }
-          else{
-            setArrowLeft('directionLeft directionLeftContact directionLeftAppearance');
-          }
-
-          if(location.pathname === "/contact"){
-            document.querySelector(".js-scene-move").classList.remove('scene-move-right');
-            /*setSceneClass('scene-move-left scene-move')*/;
-            document.querySelector(".js-scene-move").classList.add('scene-move-left');
-          }
-
-          clearInterval(id);
-        },800)
-      },1000);
-    };
+  const arrowNeed = {
+    location,
+    setAboutClass,
+    setFooterClass,
+    setArrowLeft,
+    setArrowRight,
+    setGithubLink,
+    setLinkedinLink,
+    setDisplayLocation,
+    setPage,
+    setHamburgerMenu,
+    setGithub,
+    setLinkedin,
+    setPageChange,
+    setSceneClass,
+    setCurrentClass,
+    setMainClass
+  };
 
 
-    const clickLeftArrow = () => {
-      
-      /*setSceneClass('scene-move scene-move-left');*/
-      setAboutClass('about about-hidden');
-      document.querySelector(".js-scene-move").classList.remove('scene-move-right');
-      document.querySelector(".js-scene-move").classList.add('scene-move-left');
-      setFooterClass('footer-hidden');
-      setHamburgerMenu('hamburger-menu hamburger-menu-hov hamburger-menu-disappearance');
-      setArrowRight('directionRight directionRightDisappearance');
-      setArrowLeft('directionLeft  directionLeftDisappearance ');
-      setGithub('github github-hidden');
-      setLinkedin('linkedin linkedin-hidden');
-      setGithubLink('github-link github-link-hidden')
-      setLinkedinLink('linkedin-link linkedin-link-hidden')
+  const menu = {
+    isMenuActive,
+    setMenuActive,
+    hamburgerMenu,
+    setHamburgerMenu
+  };
 
-      let id3= setInterval(() => {
-        document.querySelector(".js-current").classList.add('rotate-page-right');
-        /*setCurrentClass('current rotate-page-right');
-        setSceneClass('scene-move scene-move-left moveleft');*/
-        document.querySelector(".js-scene-move").classList.add('moveleft');
-        document.querySelector(".js-main").classList.add('App-page');
-        /*setMainClass('main App-page');*/
-        
-        let id2 = setInterval(() => {
-          setDisplayLocation(location);
-         clearInterval(id2);
-        },400);
-        
-        let id = setInterval(() => {
-          setPage('');
-          /*setSceneClass('scene-move scene-move-left');*/
-          document.querySelector(".js-scene-move").classList.remove('moveleft');
-          document.querySelector(".js-current").classList.remove('rotate-page-right');
-          /*setCurrentClass('current');*/
-          document.querySelector(".js-main").classList.remove('App-page');
-          /*setMainClass('main');*/
-          setHamburgerMenu('hamburger-menu hamburger-menu-hov hamburger-menu-appearance');
-          setFooterClass('');
-          setAboutClass('about about-visible');
-          if (location.pathname === '/'){
-            setArrowRight('directionRight directionRightHome directionRightAppearance');
-          }
-          else{
-            setArrowRight('directionRight directionRightPortfolio directionRightAppearance');
-          }
-          if (location.pathname === '/portfolio'){
-            setArrowLeft('directionLeft directionLeftPortfolio directionLeftAppearance');
-          }
-          else{
-            setArrowLeft('directionLeft directionLeftContact directionLeftAppearance');
-          }
+  const mainNeed = {
+    location,
+    displayLocation,
+    aboutClass,
+    arrowLeft,
+    arrowRight,
+    github,
+    githubLink,
+    linkedin,
+    linkedinLink,
+    page,
+    isPageChange,
+    mainClass,
+    currentClass,
+    sceneClass,
+    homeText,
+    setHomeText,
+    contactText,
+    setContactText,
+    portfolioText,
+    setPortfolioText
+  };
 
-          if(location.pathname === "/"){
-            /*setSceneClass('scene-move scene-move-right');*/
-            document.querySelector(".js-scene-move").classList.remove('scene-move-left');
-            document.querySelector(".js-scene-move").classList.add('scene-move-right');
-            setGithubLink('github-link github-link-appearance');
-            setGithub('github');
-            setLinkedinLink('linkedin-link linkedin-link-appearance');
-            setLinkedin('linkedin');
-          }
+  const siteAnimation = useCallback( () =>{
 
-          clearInterval(id);
-        },800);
-        clearInterval(id3);
-      },1000);
-    };
-
-
-
-    if (location !==displayLocation) {
-      if (isMenuActive) {
-        let id = setInterval(() => {
-          if (displayLocation.pathname === "/") {
-            if (location.pathname === "/portfolio")
-              setPage(<Portfolio/>);
-            else setPage(<Contact/>);
-            clickRightArrow();
-          }
-          else if (displayLocation.pathname === "/contact") {
-            if (location.pathname === "/portfolio")
-              setPage(<Portfolio/>);
-            else setPage(<Home github = {github} linkedin = {linkedin} aboutClass = {aboutClass}/>);
-            clickLeftArrow();
-          }
-          else {
-            if (location.pathname === "/contact")
-              {setPage(<Contact/>); clickRightArrow();}
-            else {setPage(<Home github = {github} linkedin = {linkedin} aboutClass = {aboutClass}/>); clickLeftArrow();}
-          }
-          clearInterval(id);
-          setMenuActive(false);
-        },1500);
-      }
-      else{
-        if (displayLocation.pathname === "/") {
-          if (location.pathname === "/portfolio")
-            setPage(<Portfolio/>);
-          else setPage(<Contact/>);
-          clickRightArrow();
-        }
-        else if (displayLocation.pathname === "/contact") {
-          if (location.pathname === "/portfolio")
-            setPage(<Portfolio/>);
-          else setPage(<Home github = {github} linkedin = {linkedin} aboutClass = {aboutClass}/>);
-          clickLeftArrow();
-        }
-        else {
-          if (location.pathname === "/contact")
-            {setPage(<Contact/>); clickRightArrow();}
-          else {setPage(<Home github = {github} linkedin = {linkedin} aboutClass = {aboutClass}/>) ; clickLeftArrow();}
-        }
-      }
+    if (displayLocation.pathname === "/") {
+      if (location.pathname === "/portfolio")
+        setPage(<Portfolio portfolioText={portfolioText}/>);
+      else if (location.pathname === "/contact") setPage(<Contact contactText = {contactText}/>);
+      else setPage(<NotFound/>);
+      ClickRightArrow(arrowNeed);
     }
-  }, [location, displayLocation, isMenuActive, arrowRight]);
+    else if (displayLocation.pathname === "/contact") {
+      if (location.pathname === "/portfolio")
+        setPage(<Portfolio portfolioText={portfolioText} />);
+      else if (location.pathname === "/") setPage(<Home github = {github} linkedin = {linkedin} aboutClass = {aboutClass} homeText = {homeText} />);
+      else setPage(<NotFound/>);
+      ClickLeftArrow(arrowNeed);
+    }
+    else if (displayLocation.pathname === "/portfolio"){
+      if (location.pathname === "/contact")
+        {setPage(<Contact contactText = {contactText}/>); ClickRightArrow(arrowNeed);}
+      else if (location.pathname === "/") {setPage(<Home github = {github} linkedin = {linkedin} aboutClass = {aboutClass} homeText = {homeText}/>) ; ClickLeftArrow(arrowNeed);}
+      else {setPage(<NotFound/>); ClickLeftArrow(arrowNeed);}
+    }
+    else{
+      if (location.pathname === "/contact") {
+        setPage(<Contact contactText = {contactText}/>);
+      }
+      else if (location.pathname === "/") {
+        setPage(<Home github = {github} linkedin = {linkedin} aboutClass = {aboutClass} homeText = {homeText}/>);
+      }
+      else if (location.pathname === "/portfolio") {
+        setPage(<Portfolio portfolioText={portfolioText}/>);
+      }
+      else {
+        setPage(<NotFound/>);
+      }
+      ClickLeftArrow(arrowNeed);
+    }
+  }, [displayLocation, aboutClass, github, linkedin, arrowNeed, location.pathname]);
+
+
+
+  useEffect(() => {
+    if (location !==displayLocation) {
+      setPageChange(true);
+      setTimeout(() => {
+        if (isMenuActive) {
+          setTimeout(() => {
+            siteAnimation();
+            setMenuActive(false);
+          },1500);
+        }
+        else{
+          
+          siteAnimation();
+        }
+      },10);
+      
+    }
+  }, [location, displayLocation, isMenuActive, arrowRight, arrowLeft]);
 
 
 
   return (
     <>
-      <Header setMenuActive = {setMenuActive} isMenuActive = {isMenuActive} hamburgerMenu = {hamburgerMenu} setHamburgerMenu = {setHamburgerMenu}/>
-        
-      <main>
-        <Routes location={displayLocation}>
-          <Route path="/" element={
-            <>
-              <div className = 'scene'> 
-                <div className = 'js-main main'/*{mainClass}*/>
-                  <section className = 'js-current current'/*{currentClass}*/>
-                    <Home aboutClass = {aboutClass} arrowRight = {arrowRight} githubLink = {githubLink} github = {github} linkedin = {linkedin} linkedinLink = {linkedinLink} />
-                  </section>
-                </div>
-              </div>
-              <div className = 'js-scene-move scene-move-right scene-move' /*{sceneClass}*/>
-                <div className = 'main-move'>
-                  <section className = 'loader'>{page}</section>
-                </div>
-              </div>
-            </>
-          }/>
-          <Route path="/portfolio" element={
-            <>
-              <div className = 'scene'> 
-                <div className = 'js-main main'/*{mainClass}*/>
-                  <section className = 'js-current current'/*{currentClass}*/>
-                    <Portfolio arrowRight = {arrowRight} arrowLeft = {arrowLeft}/>
-                  </section>
-                </div>
-              </div>
-              <div className = 'js-scene-move scene-move-right scene-move' /*{sceneClass}*/>
-                <div className = 'main-move'>
-                  <section className = 'loader'>{page}</section>
-                </div>
-              </div>
-            </>
-          }/>
-          <Route path="/contact" element={
-            <>
-              <div className = 'scene'> 
-                <div className = 'js-main main'/*{mainClass}*/>
-                  <section className = 'js-current current'/*{currentClass}*/>
-                    <Contact arrowLeft = {arrowLeft}/>
-                  </section>
-                </div>
-              </div>
-              <div className = 'js-scene-move scene-move-right scene-move'/*{sceneClass}*/>
-                <div className = 'main-move'>
-                  <section className = 'loader'>{page}</section>
-                </div>
-              </div>
-            </>
-          }/>
-        </Routes>
-      </main>
-        
+      <Header menu = {menu}/>
+      <Main {...mainNeed}/>
       <Footer footerClass = {footerClass}/>
     </>
   )
