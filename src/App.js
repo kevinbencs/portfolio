@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Layout from './components/layout';
 import Main from './components/main/main';
 
@@ -61,11 +61,11 @@ function App() {
 
   return (
     <div className="App">
-      <HashRouter>
+      <BrowserRouter>
         <Layout menu={menu} footerClass={footerClass} {...content}>
           <Main {...content} />
         </Layout>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }
