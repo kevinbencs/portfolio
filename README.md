@@ -7,7 +7,7 @@ Használt technológiák:
 - CSS
 - React
 
-"homepage": "http://kevinbencs.github.io/portfolio",
+
 
 
 
