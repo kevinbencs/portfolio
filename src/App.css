@@ -9,10 +9,13 @@
   --linkedin: #2867b2;
   --submit-button: rgb(150,150,150);
   --submit-button-hover: rgb(170,170,170);
+  --cv-hover: rgb(170,170,170);
   --github-button-hover: rgba(100, 100, 100, 0.5);
   --linkdedin-button-hover: rgba(7, 22, 109, 0.5);
   --name-color: rgb(180,180,180);
-
+  --project-color: rgba(83, 83, 83, 0.842);
+  --project-item-color: rgb(49, 49, 49);
+  --project-text-color: rgb(141, 141, 141);
   --menu-backgroud-color: rgb(55, 55, 55);
   --hamburger-menu-color: rgb(143, 143, 143);
   --menu-item-color: rgb(150, 150, 150);

@@ -1,0 +1,18 @@
+{
+    "home": {
+        "h1": "Hello, az én nevem",
+        "about": "Egy full-stack webfejlesztő vagyok."
+    },
+    "portfolio": {
+        "h1": "Webfejlesztő portfólió",
+        "section": "Készségeim: HTML, CSS, Javascript, React, Node.JS, Sass, Bootstrapp, TypeScript"
+    },
+    "contatc": {
+        "h1": "Kapcsolat",
+        "h2": "Egyéb elérhetőség",
+        "p": "Ha fel szeretnéd venni velem a kapcsolatot, töltsd ki az űrlapot vagy küldj egy email-t a kevinbencs8@gmail.com címre.",
+        "name": "Név",
+        "message": "Üzenet",
+        "button": "ELKÜLD"
+    }
+}

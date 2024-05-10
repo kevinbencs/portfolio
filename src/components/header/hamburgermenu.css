@@ -1,4 +1,63 @@
   
+.language{
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  z-index: 25;
+}
+
+.language-show{
+  animation-name: languageShow;
+  animation-duration: 0.5s;
+}
+
+@keyframes languageShow {
+  0%{
+    left: -50px;
+  }
+  100%{
+    left: 40px;
+  }
+}
+
+.language button{
+  background-color: var(--background-main);
+  color: var(--text-color);
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.language button:focus{
+  animation-name: language;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes language{
+  from{
+      border-bottom: none;
+  }
+  to{
+      border-bottom: 1px solid var(--text-color);
+  }
+}
+
+.language button:hover{
+  font-size: 30px;
+}
+
+.language-hide{
+  left: -50px;
+  transition-duration: 0.2s;
+}
+
+
+/*************************************************************************************************
+hamburger-menu
+*************************************************************************************************/
 .hamburger-menu-label{
   display: block;
   width: 54px;
