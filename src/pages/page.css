@@ -350,9 +350,10 @@ portfolio page
 
 .project{
     width: 100%;
-    max-width: calc(50vw - 290px - 25px);
     height: 260px;
     overflow: hidden;
+    min-width: 281px;
+    max-width: calc(50vw - 290px - 25px);
 }
 
 .project img{
@@ -1131,6 +1132,18 @@ github and linkedin link in home page
 media screen
 ******************************************************************************************************************/
 
+@media screen and (max-width: 1192px) {
+    .project{
+        max-width:none;
+    }
+    .project-container{
+        grid-template-columns: auto;
+        margin: 60px 290px 0;
+        padding-bottom: 60px;
+    }
+}
+
+
 @media screen and (max-width: 1004px) {
     nav .directionRight::after{
         visibility: hidden;
@@ -1138,12 +1151,12 @@ media screen
     nav .directionLeft::after{
         visibility: hidden;
     }
-    
+
     .project-container{
         grid-template-columns: auto;
         margin: 60px 190px 0;
-        padding-bottom: 60px;
     }
+    
 }
 
 @media screen and (max-width: 992px) {

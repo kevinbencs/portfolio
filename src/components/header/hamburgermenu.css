@@ -1,8 +1,8 @@
   
 .language{
   position: fixed;
-  top: 40px;
-  left: 40px;
+  top: 30px;
+  left: 10px;
   z-index: 25;
 }
 

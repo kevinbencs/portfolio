@@ -1,11 +1,11 @@
 {
     "home": {
         "h1": "Hello, my name is",
-        "about": "I am a full-stack web developer."
+        "about": "I am a frontend web developer."
     },
     "portfolio": {
         "h1": "Web developer portfolio",
-        "section": "My skills: HTML, CSS, Javascript, React, Node.JS, Sass, Bootstrapp, TypeScript"
+        "section": "My skills: HTML, CSS, Javascript, React, Node.JS, Sass, Bootstrapp, TypeScript, SQL, MongoDB"
     },
     "contact": {
         "h1": "Get in touch",
@@ -14,5 +14,10 @@
         "name": "Name",
         "message": "Message",
         "button": "SUBMIT YOUR MESSAGE"
+    },
+    "menu":{
+        "about": "about",
+        "portfolio": "portfolio",
+        "contact": "contact"
     }
 }

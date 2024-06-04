@@ -39,16 +39,27 @@ export default function Portfolio(props) {
                 <li className='project-tech-item-container'>
                   <div className='project-tech-item project-tech-item6'>Api</div>
                 </li>
+                <li className='project-tech-item-container'>
+                  <div className='project-tech-item project-tech-item6'>Node.js</div>
+                </li>
+                <li className='project-tech-item-container'>
+                  <div className='project-tech-item project-tech-item6'>SQLite</div>
+                </li>
+                <li className='project-tech-item-container'>
+                  <div className='project-tech-item project-tech-item6'>MongoDB</div>
+                </li>
               </ul>
               <section className='github-pages-conatiner'>
-                <a href="https://github.com/kevinbencs/recipe-site" rel='noreferrer' target='_blank' tabIndex={-1}>
+                <a href="https://github.com/kevinbencs/recipe-site-backend" rel='noreferrer' target='_blank' tabIndex={-1}>
                   <img src={github} alt="github link" />
                 </a>
-                <a href="https://kevinbencs.github.io/recipe-site/" rel='noreferrer' target='_blank' tabIndex={-1}>GitHub Pages</a>
+                <a href="https://recipe-deploye.vercel.app/" rel='noreferrer' target='_blank' tabIndex={-1}>Page</a>
               </section>
 
             </div>
           </div>
+
+
         </div>
       </article>
     </>

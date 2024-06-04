@@ -3,7 +3,7 @@ import './page.css';
 import GithubLogo from '../images/github-mark-white.png';
 import LinkedinLogo from '../images/linkedin.png';
 import Portrait from '../images/portrait.jpg';
-import cv from '../cv/cv.pdf';
+import cv from '../cv/Bencs_Kevin_CV.pdf';
 import hu from '../language/hu.json';
 import eng from '../language/eng.json';
 

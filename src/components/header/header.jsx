@@ -85,7 +85,8 @@ export default function Header(props) {
     menuItemAboutClass,
     menuItemContactClass,
     menuItemPortfolioClass,
-    setMenuActive: props.setMenuActive
+    setMenuActive: props.setMenuActive,
+    language: props.language
   };
 
   const handleLanguage = () => {
