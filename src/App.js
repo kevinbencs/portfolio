@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import { HashRouter, HashRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import Layout from './components/layout';
 import Main from './components/main/main';
 
