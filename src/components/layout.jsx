@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './header/header';
 import Footer from './footer/footer';
 import ScrollTop from './scrolltop';
@@ -6,6 +6,7 @@ import { useLocation, Link } from 'react-router-dom';
 
 export default function Layout(props) {
   const location = useLocation();
+  const [displayLocation, setDisplayLocation] = useState(location);
 
   useEffect(() => {
     props.setArrowRight(
@@ -18,6 +19,13 @@ export default function Layout(props) {
     );
 
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setDisplayLocation(location);
+    },1000)
+  },[location]);
+
   return (
     <>
       <Header {...props.menu} />
@@ -25,12 +33,12 @@ export default function Layout(props) {
       <main>
 
         <nav>
-          {location.pathname !== '/contact' &&
+          {displayLocation.pathname !== '/contact' &&
             <Link to={location.pathname === '/' ? '/portfolio' : '/contact'} className={props.arrowRight}>
               <span></span>
             </Link>
           }
-          {location.pathname !== '/' &&
+          {displayLocation.pathname !== '/' &&
             <Link to={location.pathname === '/portfolio' ? '/' : '/portfolio'} className={props.arrowLeft}>
               <span></span>
             </Link>

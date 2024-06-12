@@ -108,6 +108,22 @@ home page
 }
 
 
+.about-cursor{
+    animation: cursor-show 0.75s infinite;
+}
+
+@keyframes cursor-show{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
 
 /****************************************************************************************************************
 contact page
@@ -631,12 +647,12 @@ nav .directionRightPortfolio::after{
 }
 
 nav .directionRight:hover::after {
-    left: -5vw;
+    left:  max(-5vw, -55px);
     opacity: 1;
 }
 
 nav .directionRight:focus::after {
-    left: -5vw;
+    left: max(-5vw, -55px);
     opacity: 1;
 }
 
@@ -790,12 +806,12 @@ nav .directionLeftPortfolio::after{
 }
 
 nav .directionLeft:hover::after {
-    left: calc(5vw + 120px);
+    left:  min(calc(5vw + 120px), 175px);
     opacity: 1;
 }
 
 nav .directionLeft:focus::after {
-    left: calc(5vw + 120px);
+    left:  min(calc(5vw + 120px), 175px);
     opacity: 1;
 }
 

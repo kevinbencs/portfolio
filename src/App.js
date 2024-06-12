@@ -61,11 +61,11 @@ function App() {
 
   return (
     <div className="App">
-      <HashRouter>
+      <BrowserRouter>
         <Layout menu={menu} footerClass={footerClass} {...content}>
           <Main {...content} />
         </Layout>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }

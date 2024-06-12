@@ -1,6 +1,6 @@
 # Portfólió oldal
 
-## Github pages: [Portfolio website](https://kevinbencs.github.io/portfolio/)
+## Link: [Portfolio website](https://www.bencskevin.hu/)
 
 Használt technológiák:
 - HTML
