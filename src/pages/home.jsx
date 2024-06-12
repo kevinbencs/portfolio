@@ -126,7 +126,7 @@ export default function Home(props) {
         <a rel='noreferrer' target='_blank' href='https://github.com/' className={props.githubLink} onClick={githubClick} ref={githubLink}>
           <img src={GithubLogo} alt='github link' className={props.github} />
         </a>
-        <a rel='noreferrer' target='_blank' href='https://hu.linkedin.com/' className={props.linkedinLink} onClick={linkedinClick} ref={linkedinLink}>
+        <a rel='noreferrer' target='_blank' href='https://linkedin.com/in/kevin-bencs-3a3883311' className={props.linkedinLink} onClick={linkedinClick} ref={linkedinLink}>
           <img src={LinkedinLogo} alt='linkedin link' className={props.linkedin} />
         </a>
       </nav>
