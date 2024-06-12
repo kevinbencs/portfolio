@@ -14,7 +14,7 @@ const showText = (setH1Text, setName, setPText, language, setH1Line, setPline, s
 
   let TextArray = '';
   let h1Text = '';
-  const name = 'Bencs Kevin.';
+  let name = 'Bencs Kevin.';
   let pText = '';
   if (language === 'HU') {
     h1Text = hu.home.h1;
@@ -23,6 +23,7 @@ const showText = (setH1Text, setName, setPText, language, setH1Line, setPline, s
   else {
     h1Text = eng.home.h1;
     pText = eng.home.about;
+    let name = 'Kevin Bencs.';
   }
 
   for (let i = 0; i < h1Text.length; i++) {
