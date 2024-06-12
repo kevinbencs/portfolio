@@ -52,7 +52,7 @@ export default function Contact(props) {
               <img src={GithubLogo} alt='github link' className='github-button-img' />
               <div className='github-button-text'>github</div>
             </a>
-            <a rel='noreferrer' target='_blank' href='https://hu.linkedin.com/' className='linkedin-button' onClick={linkedinClick} ref={linkedinLink}>
+            <a rel='noreferrer' target='_blank' href='https://linkedin.com/in/kevin-bencs-3a3883311' className='linkedin-button' onClick={linkedinClick} ref={linkedinLink}>
               <img src={LinkedinLogo} alt='linkedin link' className='linkedin-button-img' />
               <div className='linkedin-button-text'>linkedin</div>
             </a>
