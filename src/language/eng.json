@@ -5,7 +5,7 @@
     },
     "portfolio": {
         "h1": "Web developer portfolio",
-        "section": "My skills: HTML, CSS, Javascript, React, Node.JS, Sass, Bootstrapp, TypeScript, SQL, MongoDB"
+        "section": "My skills: HTML, CSS, Javascript, React, Node.JS, Sass, Bootstrap, TypeScript, SQL, MongoDB"
     },
     "contact": {
         "h1": "Get in touch",
