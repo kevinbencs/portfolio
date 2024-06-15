@@ -123,7 +123,7 @@ export default function Home(props) {
       </section>
 
       <nav className='github-linkedin-home-container'>
-        <a rel='noreferrer' target='_blank' href='https://github.com/' className={props.githubLink} onClick={githubClick} ref={githubLink}>
+        <a rel='noreferrer' target='_blank' href='https://github.com/kevinbencs' className={props.githubLink} onClick={githubClick} ref={githubLink}>
           <img src={GithubLogo} alt='github link' className={props.github} />
         </a>
         <a rel='noreferrer' target='_blank' href='https://linkedin.com/in/kevin-bencs-3a3883311' className={props.linkedinLink} onClick={linkedinClick} ref={linkedinLink}>

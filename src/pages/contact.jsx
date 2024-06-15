@@ -48,7 +48,7 @@ export default function Contact(props) {
           <h2 className=''>{props.language === 'HU' ? hu.contatc.h2 : eng.contact.h2}</h2>
 
           <nav className='github-linkedin-button-container'>
-            <a rel='noreferrer' target='_blank' href='https://github.com/' className='github-button' onClick={githubClick} ref={githubLink}>
+            <a rel='noreferrer' target='_blank' href='https://github.com/kevinbencs' className='github-button' onClick={githubClick} ref={githubLink}>
               <img src={GithubLogo} alt='github link' className='github-button-img' />
               <div className='github-button-text'>github</div>
             </a>
