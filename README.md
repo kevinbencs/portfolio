@@ -1,16 +1,17 @@
-# Portfólió oldal
+# Portfolio website
 
 ## Link: [Portfolio website](https://www.bencskevin.hu/)
 
-Használt technológiák:
+Technologies used:
 - HTML
 - CSS
 - React
 
 
-## Az oldal leírása
+## Description of the Page
 
-Az oldal feléptése az `src` könyvtárban történik meg. Az angol és a magyar nyelv kiválasztásához létrehoztam egy `language` könyvtárat és benne kettő darab json fájlt, melyekbe eltárolom az oldal szövegét. A három oldal felépítése a `pages` nevű könyvtárban található, melyben létrehoztam a stílusukhoz egy `pages.css`-t. Az oldal többi építőelemének nagy része a `components` könyvtárban található. Itt hoztam létre az oldalak `header`-jét és `footer`-jét. A `header` részben található a menű és a nyelv választásához szükséges gomb felépítése. A `components`-ben található még az oldalak közötti animáció (`clickleftarrow.jsx`, `clickrightarrow.jsx`, `scrolltop.jsx`, `siteanimation.js`), egy `layout.jsx`.et, ami tartalmazza a `header`-t és a `footer`-t, valamint egy `main.jsx`-t, amiben definiáltam a route-okat.
+
+The website construction is in the `src` directory.  A `language` directory with two JSON files holding the text to choose English or Hungarian. The layout of the three pages is in the `pages` directory, and their styles are in `pages.css`. Most other parts of the page are in the `components` directory. Here are the `header` and the `footer` directory. The `header` has the `menu` and a button for choosing the language. The `components` directory also owns the animations between pages, the `layout.jsx`, and the `main.jsx`.  The `clickleftarrow.jsx`, the `clickrightarrow.jsx`,  the `scrolltop.jsx`, and the `siteanimation.js` build the animations. I set the routes in the `main.jsx`. The `layout.jsx` includes the `header` and the `footer`.
 
 
 
