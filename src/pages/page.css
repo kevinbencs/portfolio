@@ -631,7 +631,7 @@ nav .directionRight::after{
     position: relative;
     color: var(--arrow-after-text-color);
     top: 83px;
-    right: 10px;
+    right: 40px;
     font-size: max(1.5vw, 20px);
     text-shadow: 0 0 1vw whitesmoke;
     opacity: 0;
@@ -647,12 +647,12 @@ nav .directionRightPortfolio::after{
 }
 
 nav .directionRight:hover::after {
-    right:  50px;
+    right:  80px;
     opacity: 1;
 }
 
 nav .directionRight:focus::after {
-    right: 50px;
+    right: 80px;
     opacity: 1;
 }
 
@@ -1147,6 +1147,22 @@ github and linkedin link in home page
 /*****************************************************************************************************************
 media screen
 ******************************************************************************************************************/
+
+@media screen and (max-width: 1700px) {
+    nav .directionRight::after{
+        right: 20px;
+    }
+    
+    nav .directionRight:hover::after {
+        right:  50px;
+        opacity: 1;
+    }
+    
+    nav .directionRight:focus::after {
+        right: 50px;
+        opacity: 1;
+    }
+}
 
 @media screen and (max-width: 1192px) {
     .project{
