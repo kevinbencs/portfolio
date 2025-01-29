@@ -68,7 +68,7 @@ export default function Header(props) {
       hamburgerMenu.current.blur();
       setTimeout(() => {
         setHamburgerMenuClick(true);
-      }, 1200);
+      }, 1000);
     }
   };
 
@@ -92,9 +92,11 @@ export default function Header(props) {
   const handleLanguage = () => {
     if (props.language === 'HU'){
       props.setLanguage('EN');
+      localStorage.setItem('lan','EN')
     }
     else{
       props.setLanguage('HU');
+      localStorage.setItem('lan','HU')
     }
     languageButton.current.blur();
   };

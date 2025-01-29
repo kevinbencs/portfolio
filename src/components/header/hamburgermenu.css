@@ -8,7 +8,7 @@
 
 .language-show{
   animation-name: languageShow;
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
 }
 
 @keyframes languageShow {
@@ -16,7 +16,7 @@
     left: -50px;
   }
   100%{
-    left: 40px;
+    left: 10px;
   }
 }
 
@@ -51,7 +51,7 @@
 
 .language-hide{
   left: -50px;
-  transition-duration: 0.2s;
+  transition-duration: 0.1s;
 }
 
 
@@ -82,7 +82,7 @@ hamburger-menu
   height: 4px;
   background-color: var(--hamburger-menu-color);
   position: relative;
-  transition-duration: 0.3s;
+  transition-duration: 0.1s;
 }
 
 .hamburger-menu::before{
@@ -122,19 +122,19 @@ hamburger-menu
 
 .hamburger-menu-appearance {
   animation-name: hamburger-menu-appearance;
-  animation-duration: 0.6s;
+  animation-duration: 0.4s;
 }
 
 .hamburger-menu-appearance::after {
   animation-name: hamburger-menu-appearance;
-  animation-duration: 0.6s;
-  animation-delay: 0.2s;
+  animation-duration: 0.4s;
+  animation-delay: 0.1s;
 }
 
 .hamburger-menu-appearance::before {
   animation-name: hamburger-menu-appearance;
-  animation-duration: 0.6s;
-  animation-delay: 0.1s;
+  animation-duration: 0.4s;
+  animation-delay: 0.05s;
 }
 
 
@@ -151,20 +151,20 @@ hamburger-menu
 .hamburger-menu-disappearance {
   animation-name: hamburger-menu-disappearance;
   animation-fill-mode:forwards;
-  animation-duration: 0.6s;
-  animation-delay: 0.2s;
+  animation-duration: 0.4s;
+  animation-delay: 0.1s;
   
 }
 
 .hamburger-menu-disappearance::after {
   animation-name: hamburger-menu-disappearance;
-  animation-duration: 0.6s;
+  animation-duration: 0.2s;
 }
 
 .hamburger-menu-disappearance::before {
   animation-name: hamburger-menu-disappearance;
-  animation-duration: 0.6s;
-  animation-delay: 0.1s;
+  animation-duration: 0.4s;
+  animation-delay: 0.05s;
 }
 
 
@@ -196,7 +196,7 @@ hamburger-menu
   left: -2px;
   rotate: 60deg;
   animation-name: hamburger-label-rotate;
-  animation-duration: 800ms;
+  animation-duration: 600ms;
 }
 
 

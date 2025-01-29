@@ -67,10 +67,11 @@ export default function Main(props) {
             props.setPageChange(true);
             setTimeout(() => {
                 if (props.isMenuActive) {
+                    
                     setTimeout(() => {
                         SiteAnimation(mainNeed);
                         props.setMenuActive(false);
-                    }, 1500);
+                    }, 650);
                 }
                 else {
 

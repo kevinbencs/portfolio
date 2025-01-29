@@ -25,7 +25,7 @@ const showText = (setH1Text, setName, setPText, language, setH1Line, setPline, s
     pText = eng.home.about;
     name = 'Kevin Bencs.';
   }
-
+  
   for (let i = 0; i < h1Text.length; i++) {
     setTimeout(() => {
       TextArray += h1Text[i];
@@ -98,12 +98,7 @@ export default function Home(props) {
     }, 900);
   }, [props.language]);
 
-  useEffect(() => {
-    setInterval(() => {
-
-    }, 500);
-  }, []);
-
+ 
 
   return (
     <>

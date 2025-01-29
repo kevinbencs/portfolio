@@ -23,7 +23,7 @@ export default function Layout(props) {
   useEffect(() => {
     setTimeout(() => {
       setDisplayLocation(location);
-    },1000)
+    },850)
   },[location]);
 
   return (

@@ -1,11 +1,11 @@
 {
     "home": {
-        "h1": "Hello, az én nevem",
-        "about": "Egy frontend webfejlesztő vagyok."
+        "h1": "Hello, a nevem",
+        "about": "Full-stack webfejlesztő vagyok."
     },
     "portfolio": {
         "h1": "Webfejlesztő portfólió",
-        "section": "Készségeim: HTML, CSS, Javascript, React, Node.JS, Sass, Bootstrap, TypeScript, SQL, MongoDB"
+        "section": "Készségeim: HTML, CSS, Javascript, React, Node.JS, Sass, TailwindCSS, TypeScript, SQL, MongoDB, Next.js"
     },
     "contatc": {
         "h1": "Kapcsolat",
@@ -16,8 +16,8 @@
         "button": "ELKÜLD"
     },
     "menu":{
-        "about": "rólam",
-        "portfolio": "portfólió",
-        "contact": "kapcsolat"
+        "about": "Rólam",
+        "portfolio": "Portfólió",
+        "contact": "Kapcsolat"
     }
 }

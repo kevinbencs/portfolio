@@ -52,8 +52,8 @@ const ClickLeftArrow = (props) => {
       else {
         props.setArrowLeft('directionLeft directionLeftContact directionLeftAppearance');
       }
-    }, 800);
-  }, 1000);
+    }, 600);
+  }, 100);
 };
 
 export default ClickLeftArrow;

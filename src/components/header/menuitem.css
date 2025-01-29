@@ -1,6 +1,6 @@
 .menu-list {
     position: fixed;
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
     height: 100vh;
     z-index: 50;
     top : -100vh;

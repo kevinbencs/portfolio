@@ -2,6 +2,7 @@ import hu from '../language/hu.json';
 import eng from '../language/eng.json';
 import Recipe from '../images/recipe2.JPG';
 import github from '../images/github-mark-white.png';
+import Newspaper from '../images/wordtimes.JPG'
 
 
 export default function Portfolio(props) {
@@ -31,12 +32,6 @@ export default function Portfolio(props) {
                   <div className='project-tech-item project-tech-item3'>Sass</div>
                 </li>
                 <li className='project-tech-item-container'>
-                  <div className='project-tech-item project-tech-item4'>HTML5</div>
-                </li>
-                <li className='project-tech-item-container'>
-                  <div className='project-tech-item project-tech-item5'>CSS3</div>
-                </li>
-                <li className='project-tech-item-container'>
                   <div className='project-tech-item project-tech-item6'>Api</div>
                 </li>
                 <li className='project-tech-item-container'>
@@ -54,6 +49,48 @@ export default function Portfolio(props) {
                   <img src={github} alt="github link" />
                 </a>
                 <a href="https://recipe-deploye.vercel.app/" rel='noreferrer' target='_blank' tabIndex={-1}>Page</a>
+              </section>
+
+            </div>
+          </div>
+
+          <div className='project' >
+            <a href="https://github.com/kevinbencs/recipe-site" rel='noreferrer' target='_blank' className='focus-link' >
+              <img src={Newspaper} alt="Reicpe site" />
+            </a>
+            <div className='project-text-link'>
+              <div className='projetc-h2-conatiner'>
+                <h2 className='projetc-h2'>Online newspaper</h2>
+              </div>
+              <ul className='project-tech-container'>
+                <li className='project-tech-item-container'>
+                  <div className='project-tech-item project-tech-item1'>Next.js</div>
+                </li>
+                <li className='project-tech-item-container'>
+                  <div className='project-tech-item project-tech-item2'>TypeScript</div>
+                </li>
+                <li className='project-tech-item-container'>
+                  <div className='project-tech-item project-tech-item3'>TailwindCSS</div>
+                </li>
+                <li className='project-tech-item-container'>
+                  <div className='project-tech-item project-tech-item4'>Supabase</div>
+                </li>
+                <li className='project-tech-item-container'>
+                  <div className='project-tech-item project-tech-item6'>Api</div>
+                </li>
+                <li className='project-tech-item-container'>
+                  <div className='project-tech-item project-tech-item6'>MongoDB</div>
+                </li>
+                <li className='project-tech-item-container'>
+                  <div className='project-tech-item project-tech-item6'>Sendgrid</div>
+                </li>
+              </ul>
+              <section className='github-pages-conatiner'>
+                <a href="https://github.com/kevinbencs/online_newspaper" rel='noreferrer' target='_blank' tabIndex={-1}>
+                  <img src={github} alt="github link" />
+                </a>
+                <a href="https://online-newspaper.vercel.app/" rel='noreferrer' target='_blank' tabIndex={-1}>Page</a>
+                <a href="https://online-newspaper.vercel.app/dhdhdhsefgsgerhtrherwgerhagfws" rel='noreferrer' target='_blank' tabIndex={-1}>Admin login</a>
               </section>
 
             </div>

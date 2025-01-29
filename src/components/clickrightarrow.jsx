@@ -1,6 +1,6 @@
 const ClickRightArrow = (props) => {
   props.setSceneClass('scene-move-right');
-  props.setAboutClass('about-hidden');
+  
   props.setFooterClass('footer-hidden');
   props.setHamburgerMenu(' hamburger-menu-disappearance');
   props.setArrowRight('directionRight  directionRightDisappearance ');
@@ -28,6 +28,7 @@ const ClickRightArrow = (props) => {
       props.setHamburgerMenu('hamburger-menu-hov hamburger-menu-appearance');
       props.setLanguageHide('language-show');
       props.setFooterClass('');
+      props.setAboutClass('');
 
 
       if (props.location.pathname === "/contact") {
@@ -47,8 +48,8 @@ const ClickRightArrow = (props) => {
       else {
         props.setArrowLeft('directionLeft directionLeftContact directionLeftAppearance');
       }
-    }, 800)
-  }, 1000);
+    }, 600)
+  }, 100);
 };
 
 

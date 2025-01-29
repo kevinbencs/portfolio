@@ -11,7 +11,7 @@ home page
     justify-content: center;
     align-items: center;
     min-height: 99vh;
-    transition-duration: 0.5s;
+    transition-duration: 0.1s;
     opacity: 0;
 }
 
@@ -49,7 +49,7 @@ home page
 
 .cv-container a:focus{
     animation-name: cv-button;
-    animation-duration: 0.5s;
+    animation-duration: 0.2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 
@@ -74,7 +74,7 @@ home page
 
 .about-visible{
     animation-name: about-visible;
-    animation-duration: 0.7s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
 
 }
@@ -90,9 +90,9 @@ home page
     }
 }
 
-.about-hidden{
+/*.about-hidden{
     animation-name: about-hidden;
-    animation-duration: 0.7s;
+    animation-duration: 0.05s;
     animation-fill-mode: forwards;
 }
 
@@ -105,7 +105,7 @@ home page
         opacity: 0;
         width: 90vw;
     }
-}
+}*/
 
 
 .about-cursor{
@@ -181,11 +181,12 @@ contact page
     font-size: 15px;
     color: var(--text-color);
     box-sizing: border-box;
+    font-family: Arial;
 }
 
 
 .form input:focus, form textarea:focus {
-    border-color: var(--text-color);   
+    border-color: var(--text-color);
 }
 
 
@@ -580,10 +581,9 @@ nav .directionRight{
     height: 200px;
     display: inline-block;
     position: fixed;
-    left: calc(95% - 40px);
     top: calc(50vh - 100px);
     z-index: 20;
-    left: calc(100vw - 200px);
+    right: 0;
 }
 
 nav .directionRight span{
@@ -593,7 +593,7 @@ nav .directionRight span{
     display: block;
     position: relative;
     top: 75px;
-    left: 50px
+    left: 60px;
 
 }
 
@@ -631,7 +631,7 @@ nav .directionRight::after{
     position: relative;
     color: var(--arrow-after-text-color);
     top: 83px;
-    left: -20px;
+    right: 10px;
     font-size: max(1.5vw, 20px);
     text-shadow: 0 0 1vw whitesmoke;
     opacity: 0;
@@ -647,12 +647,12 @@ nav .directionRightPortfolio::after{
 }
 
 nav .directionRight:hover::after {
-    left:  max(-5vw, -55px);
+    right:  50px;
     opacity: 1;
 }
 
 nav .directionRight:focus::after {
-    left: max(-5vw, -55px);
+    right: 50px;
     opacity: 1;
 }
 
@@ -789,7 +789,7 @@ nav .directionLeft::after{
     content: "";
     position: relative;
     color: var(--arrow-after-text-color);
-    left: 120px;
+    left: 100px;
     top: 83px;
     font-size: max(1.5vw, 20px);
     text-shadow: 0 0 1vw whitesmoke;
@@ -806,12 +806,12 @@ nav .directionLeftPortfolio::after{
 }
 
 nav .directionLeft:hover::after {
-    left:  min(calc(5vw + 120px), 175px);
+    left:  140px;
     opacity: 1;
 }
 
 nav .directionLeft:focus::after {
-    left:  min(calc(5vw + 120px), 175px);
+    left:  140px;
     opacity: 1;
 }
 
@@ -1077,7 +1077,7 @@ github and linkedin link in home page
 }
 
 .github-link-hidden{
-    transition-duration: 0.3s;
+    transition-duration: 0.1s;
     width: 0;
     left: -1vw;
 }
@@ -1138,7 +1138,7 @@ github and linkedin link in home page
 
 .linkedin-link-hidden{
     width: 0;
-    transition-duration: 0.3s;
+    transition-duration: 0.1s;
     transition-delay: 0.1s;
     left: -1vw;
 }
